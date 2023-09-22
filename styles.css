@@ -45,9 +45,10 @@ body {
 .calculator {
   border: 1px solid green;
   aspect-ratio: 3/5;
-  min-width: 28rem;
+  width: 28rem;
   padding: 1rem;
   gap: 1rem;
+  justify-content: space-between;
 }
 
 .display {
@@ -55,7 +56,20 @@ body {
 }
 
 .buttons {
-  height: 80%;
+  aspect-ratio: 4/5;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.button {
+  flex-basis: 20%;
+  flex-grow: 1;
+  aspect-ratio: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 /* utility classes */
