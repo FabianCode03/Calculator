@@ -11,6 +11,8 @@
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+
+  border: 1px solid green;
 }
 
 html {
@@ -31,9 +33,21 @@ body {
     #f9f871
   );
 
+  justify-content: space-between;
   align-items: center;
   font-family: "Roboto", sans-serif;
 }
+
+.main-heading {
+  font-size: 4rem;
+}
+
+.calculator {
+  border: 1px solid green;
+  aspect-ratio: 3/5;
+  min-width: 28rem;
+}
+
 /* utility classes */
 .flex-column {
   display: flex;
