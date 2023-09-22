@@ -12,7 +12,7 @@
   font: inherit;
   vertical-align: baseline;
 
-  /* border: 1px solid green; */
+  border: 1px solid green;
 }
 
 html {
@@ -44,9 +44,18 @@ body {
 
 .calculator {
   border: 1px solid green;
-  border-radius: 1rem;
   aspect-ratio: 3/5;
   min-width: 28rem;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.display {
+  height: 20%;
+}
+
+.buttons {
+  height: 80%;
 }
 
 /* utility classes */
@@ -58,4 +67,8 @@ body {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.rounded-corners {
+  border-radius: 1rem;
 }
