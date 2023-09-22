@@ -17,3 +17,14 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
+
+/* utility classes */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
