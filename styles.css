@@ -18,6 +18,20 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    #845ec2,
+    #d65db1,
+    #ff6f91,
+    #ff9671,
+    #ffc75f,
+    #f9f871
+  );
+
+  align-items: center;
+}
 /* utility classes */
 .flex-column {
   display: flex;
