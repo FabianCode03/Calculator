@@ -32,6 +32,7 @@ body {
   );
 
   align-items: center;
+  font-family: "Roboto", sans-serif;
 }
 /* utility classes */
 .flex-column {
