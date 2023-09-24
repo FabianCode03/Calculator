@@ -55,6 +55,19 @@ body {
 .display {
   height: 20%;
   background-color: #84a98c;
+  padding: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  color: #2f3e46;
+}
+
+.calculation-string {
+  font-size: 1.5rem;
+}
+
+.calculation-result-string {
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 .buttons {
