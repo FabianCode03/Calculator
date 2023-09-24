@@ -12,7 +12,7 @@
   font: inherit;
   vertical-align: baseline;
 
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 html {
@@ -43,16 +43,18 @@ body {
 }
 
 .calculator {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   aspect-ratio: 3/5;
   width: 28rem;
-  padding: 1rem;
+  padding: 1.5rem;
   gap: 1rem;
   justify-content: space-between;
+  background-color: #2f3e46;
 }
 
 .display {
   height: 20%;
+  background-color: #84a98c;
 }
 
 .buttons {
@@ -70,6 +72,12 @@ body {
   aspect-ratio: 1;
   justify-content: center;
   align-items: center;
+  background-color: #354f52;
+  color: #cad2c5;
+}
+
+.operator {
+  background-color: #52796f;
 }
 
 /* utility classes */
@@ -86,3 +94,7 @@ body {
 .rounded-corners {
   border-radius: 1rem;
 }
+
+/* color palette for calculator:
+#CAD2C5, #84A98C, #52796F, #354F52, #2F3E46
+*/
