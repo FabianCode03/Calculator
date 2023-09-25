@@ -40,6 +40,16 @@ function operatorButtonHandler(e) {
       console.log("operator", operator);
       break;
 
+    case ".":
+      if (!operator && !firstNumber.includes(".")) {
+        firstNumber = firstNumber.concat(".");
+        console.log("first", firstNumber);
+      }
+      if (operator && !secondNumber.includes(".")) {
+        secondNumber = secondNumber.concat(".");
+        console.log("second", secondNumber);
+      }
+      break;
     default:
       break;
   }
