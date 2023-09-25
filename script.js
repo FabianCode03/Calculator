@@ -50,6 +50,16 @@ function operatorButtonHandler(e) {
         console.log("second", secondNumber);
       }
       break;
+
+    case "+/-":
+      if (!operator) {
+        firstNumber = (parseFloat(firstNumber) * -1).toString();
+        console.log("first", firstNumber);
+      } else {
+        secondNumber = (parseFloat(secondNumber) * -1).toString();
+        console.log("second", secondNumber);
+      }
+      break;
     default:
       break;
   }
