@@ -1,7 +1,7 @@
 // global variables
-let firstNumber;
-let secondNumber;
-let operator;
+let firstNumber = "";
+let secondNumber = "";
+let operator = "";
 
 //query selectors
 const numberButtons = Array.from(document.querySelectorAll(".number"));
@@ -17,6 +17,14 @@ operatorButtons.forEach(btn =>
 );
 
 //functions
-function numberButtonHandler(e) {}
+function numberButtonHandler(e) {
+  if (!operator) {
+    firstNumber = firstNumber.concat(e.target.textContent);
+    console.log("first", firstNumber);
+  } else {
+    secondNumber = secondNumber.concat(e.target.textContent);
+    console.log("second", secondNumber);
+  }
+}
 
 function operatorButtonHandler(e) {}
