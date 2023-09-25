@@ -27,4 +27,20 @@ function numberButtonHandler(e) {
   }
 }
 
-function operatorButtonHandler(e) {}
+function operatorButtonHandler(e) {
+  const currentOperation = e.target.textContent;
+
+  switch (currentOperation) {
+    case "+":
+    case "-":
+    case "*":
+    case "/":
+    case "^":
+      operator = currentOperation;
+      console.log("operator", operator);
+      break;
+
+    default:
+      break;
+  }
+}
