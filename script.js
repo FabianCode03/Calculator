@@ -20,7 +20,9 @@ numberButtons.forEach(btn =>
 operatorButtons.forEach(btn =>
   btn.addEventListener("click", e => {
     operatorButtonHandler(e);
-    updateDisplay();
+    if (btn.textContent !== "=") {
+      updateDisplay();
+    }
   })
 );
 
@@ -85,7 +87,10 @@ function operatorButtonHandler(e) {
     case "=":
       if (firstNumber && operator && secondNumber) {
         const result = calculate(firstNumber, operator, secondNumber);
-        updateResultString(result);
+
+        firstNumber = updateResultString(result);
+        operator = "";
+        secondNumber = "";
       }
       break;
 
@@ -102,6 +107,7 @@ function updateResultString(result) {
   const roundedResult = result.toFixed(12);
   const formattedRoundedResult = roundedResult.toString().replace(/\.?0+$/, "");
   resultString.textContent = `${formattedRoundedResult}`;
+  return formattedRoundedResult;
 }
 
 function calculate(firstNumber, operator, secondNumber) {
