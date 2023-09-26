@@ -82,6 +82,7 @@ function operatorButtonHandler(e) {
 
     case "=":
       const result = calculate(firstNumber, operator, secondNumber);
+      console.log("result: ", result);
       break;
 
     default:
@@ -91,4 +92,29 @@ function operatorButtonHandler(e) {
 
 function updateDisplay() {
   calculationString.textContent = `${firstNumber} ${operator} ${secondNumber}`;
+}
+
+function calculate(firstNumber, operator, secondNumber) {
+  switch (operator) {
+    case "+":
+      return +firstNumber + +secondNumber;
+
+    case "-":
+      return +firstNumber - +secondNumber;
+
+    case "*":
+      return +firstNumber * +secondNumber;
+
+    case "/":
+      if (secondNumber === "0") {
+        return "NaN (division by 0)";
+      } else {
+        return +firstNumber / +secondNumber;
+      }
+    case "^":
+      return (+firstNumber) ** +secondNumber;
+
+    default:
+      break;
+  }
 }
