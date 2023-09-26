@@ -11,8 +11,6 @@
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-
-  /* border: 1px solid green; */
 }
 
 html {
@@ -46,7 +44,6 @@ body {
 }
 
 .calculator {
-  /* border: 1px solid green; */
   aspect-ratio: 3/5;
   width: 28rem;
   padding: 1.5rem;
