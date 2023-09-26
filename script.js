@@ -60,6 +60,19 @@ function operatorButtonHandler(e) {
         console.log("second", secondNumber);
       }
       break;
+
+    case "C":
+      if (firstNumber && !operator && !secondNumber) {
+        firstNumber = firstNumber.slice(0, -1);
+        console.log("first", firstNumber);
+      } else if (firstNumber && operator && !secondNumber) {
+        operator = operator.slice(0, -1);
+        console.log("operator", operator);
+      } else if (firstNumber && operator && secondNumber) {
+        secondNumber = secondNumber.slice(0, -1);
+        console.log("second", secondNumber);
+      }
+      break;
     default:
       break;
   }
