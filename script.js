@@ -81,8 +81,10 @@ function operatorButtonHandler(e) {
       break;
 
     case "=":
-      const result = calculate(firstNumber, operator, secondNumber);
-      console.log("result: ", result);
+      if (firstNumber && operator && secondNumber) {
+        const result = calculate(firstNumber, operator, secondNumber);
+        console.log("result: ", result);
+      }
       break;
 
     default:
