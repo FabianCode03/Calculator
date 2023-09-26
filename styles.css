@@ -93,6 +93,11 @@ body {
   color: #cad2c5;
 }
 
+button:hover {
+  background-color: #cad2c5;
+  color: #2f3e46;
+}
+
 .operator {
   background-color: #52796f;
 }
