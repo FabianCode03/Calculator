@@ -44,7 +44,7 @@ function operatorButtonHandler(e) {
     case "*":
     case "/":
     case "^":
-      if (!operator) {
+      if (!operator && firstNumber) {
         operator = currentOperation;
       }
 
@@ -104,10 +104,17 @@ function updateDisplay() {
 }
 
 function updateResultString(result) {
-  const roundedResult = result.toFixed(12);
-  const formattedRoundedResult = roundedResult.toString().replace(/\.?0+$/, "");
-  resultString.textContent = `${formattedRoundedResult}`;
-  return formattedRoundedResult;
+  if (typeof result == "number") {
+    const roundedResult = result.toFixed(12);
+    const formattedRoundedResult = roundedResult
+      .toString()
+      .replace(/\.?0+$/, "");
+    resultString.textContent = `${formattedRoundedResult}`;
+    return formattedRoundedResult;
+  } else {
+    resultString.textContent = `${result}`;
+    return "";
+  }
 }
 
 function calculate(firstNumber, operator, secondNumber) {
@@ -123,7 +130,7 @@ function calculate(firstNumber, operator, secondNumber) {
 
     case "/":
       if (secondNumber === "0") {
-        return "NaN (division by 0)";
+        return "NaN";
       } else {
         return +firstNumber / +secondNumber;
       }

@@ -68,6 +68,10 @@ body {
 .calculation-result-string {
   font-size: 3rem;
   font-weight: bold;
+  width: 100%;
+  text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .buttons {
