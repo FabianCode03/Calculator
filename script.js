@@ -79,6 +79,11 @@ function operatorButtonHandler(e) {
       secondNumber = "";
       operator = "";
       break;
+
+    case "=":
+      const result = calculate(firstNumber, operator, secondNumber);
+      break;
+
     default:
       break;
   }
