@@ -12,31 +12,82 @@ const resultString = document.querySelector(".calculation-result-string");
 //event listeners
 numberButtons.forEach(btn =>
   btn.addEventListener("click", e => {
-    numberButtonHandler(e);
+    numberButtonHandler(e.target.textContent);
     updateDisplay();
   })
 );
 
 operatorButtons.forEach(btn =>
   btn.addEventListener("click", e => {
-    operatorButtonHandler(e);
+    operatorButtonHandler(e.target.textContent);
     if (btn.textContent !== "=") {
       updateDisplay();
     }
   })
 );
 
+document.addEventListener("keydown", function (event) {
+  switch (event.key) {
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
+      numberButtonHandler(event.key);
+      updateDisplay();
+      break;
+
+    case "+":
+    case "-":
+    case "*":
+    case "/":
+      operatorButtonHandler(event.key);
+      updateDisplay();
+      break;
+
+    case "Dead":
+      operatorButtonHandler("^");
+      updateDisplay();
+      break;
+
+    case "Backspace":
+      operatorButtonHandler("C");
+      updateDisplay();
+      break;
+
+    case "Delete":
+      operatorButtonHandler("AC");
+      updateDisplay();
+      break;
+
+    case ".":
+    case ",":
+      operatorButtonHandler(".");
+      updateDisplay();
+      break;
+
+    case "Enter":
+      operatorButtonHandler("=");
+      break;
+  }
+});
+
 //functions
-function numberButtonHandler(e) {
+function numberButtonHandler(buttonString) {
   if (!operator) {
-    firstNumber = firstNumber.concat(e.target.textContent);
+    firstNumber = firstNumber.concat(buttonString);
   } else {
-    secondNumber = secondNumber.concat(e.target.textContent);
+    secondNumber = secondNumber.concat(buttonString);
   }
 }
 
-function operatorButtonHandler(e) {
-  const currentOperation = e.target.textContent;
+function operatorButtonHandler(buttonString) {
+  const currentOperation = buttonString;
 
   switch (currentOperation) {
     case "+":
