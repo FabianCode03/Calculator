@@ -27,10 +27,8 @@ operatorButtons.forEach(btn =>
 function numberButtonHandler(e) {
   if (!operator) {
     firstNumber = firstNumber.concat(e.target.textContent);
-    console.log("first", firstNumber);
   } else {
     secondNumber = secondNumber.concat(e.target.textContent);
-    console.log("second", secondNumber);
   }
 }
 
@@ -45,7 +43,6 @@ function operatorButtonHandler(e) {
     case "^":
       if (!operator) {
         operator = currentOperation;
-        console.log("operator", operator);
       }
 
       break;
@@ -53,34 +50,27 @@ function operatorButtonHandler(e) {
     case ".":
       if (!operator && !firstNumber.includes(".")) {
         firstNumber = firstNumber.concat(".");
-        console.log("first", firstNumber);
       }
       if (operator && !secondNumber.includes(".")) {
         secondNumber = secondNumber.concat(".");
-        console.log("second", secondNumber);
       }
       break;
 
     case "+/-":
       if (!operator) {
         firstNumber = (parseFloat(firstNumber) * -1).toString();
-        console.log("first", firstNumber);
       } else {
         secondNumber = (parseFloat(secondNumber) * -1).toString();
-        console.log("second", secondNumber);
       }
       break;
 
     case "C":
       if (firstNumber && !operator && !secondNumber) {
         firstNumber = firstNumber.slice(0, -1);
-        console.log("first", firstNumber);
       } else if (firstNumber && operator && !secondNumber) {
         operator = operator.slice(0, -1);
-        console.log("operator", operator);
       } else if (firstNumber && operator && secondNumber) {
         secondNumber = secondNumber.slice(0, -1);
-        console.log("second", secondNumber);
       }
       break;
 
