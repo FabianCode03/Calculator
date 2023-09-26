@@ -43,8 +43,11 @@ function operatorButtonHandler(e) {
     case "*":
     case "/":
     case "^":
-      operator = currentOperation;
-      console.log("operator", operator);
+      if (!operator) {
+        operator = currentOperation;
+        console.log("operator", operator);
+      }
+
       break;
 
     case ".":
