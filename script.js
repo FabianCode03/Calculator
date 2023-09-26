@@ -73,6 +73,12 @@ function operatorButtonHandler(e) {
         console.log("second", secondNumber);
       }
       break;
+
+    case "AC":
+      firstNumber = "";
+      secondNumber = "";
+      operator = "";
+      break;
     default:
       break;
   }
