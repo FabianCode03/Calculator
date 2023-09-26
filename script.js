@@ -99,7 +99,9 @@ function updateDisplay() {
 }
 
 function updateResultString(result) {
-  resultString.textContent = `${result}`;
+  const roundedResult = result.toFixed(12);
+  const formattedRoundedResult = roundedResult.toString().replace(/\.?0+$/, "");
+  resultString.textContent = `${formattedRoundedResult}`;
 }
 
 function calculate(firstNumber, operator, secondNumber) {
