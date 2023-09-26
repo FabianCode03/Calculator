@@ -7,6 +7,7 @@ let operator = "";
 const numberButtons = Array.from(document.querySelectorAll(".number"));
 const operatorButtons = Array.from(document.querySelectorAll(".operator"));
 const calculationString = document.querySelector(".calculation-string");
+const resultString = document.querySelector(".calculation-result-string");
 
 //event listeners
 numberButtons.forEach(btn =>
@@ -78,12 +79,13 @@ function operatorButtonHandler(e) {
       firstNumber = "";
       secondNumber = "";
       operator = "";
+      updateResultString(0);
       break;
 
     case "=":
       if (firstNumber && operator && secondNumber) {
         const result = calculate(firstNumber, operator, secondNumber);
-        console.log("result: ", result);
+        updateResultString(result);
       }
       break;
 
@@ -94,6 +96,10 @@ function operatorButtonHandler(e) {
 
 function updateDisplay() {
   calculationString.textContent = `${firstNumber} ${operator} ${secondNumber}`;
+}
+
+function updateResultString(result) {
+  resultString.textContent = `${result}`;
 }
 
 function calculate(firstNumber, operator, secondNumber) {
